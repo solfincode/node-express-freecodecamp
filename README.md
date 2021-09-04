@@ -9,3 +9,10 @@
 - module: info about current module
 - process: info about env where the program is being executed
 - built in module(os,path,fs,http)
+
+2. npm module
+
+- npm init
+- npm install <package dependency>
+- install lodash npm package
+- install nodemon npm package
