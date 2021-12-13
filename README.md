@@ -16,3 +16,5 @@
 - npm install <package dependency>
 - install lodash npm package
 - install nodemon npm package
+
+3. http module and async - 3.11
