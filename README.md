@@ -18,3 +18,8 @@
 - install nodemon npm package
 
 3. http module and async - 3.11
+
+4. basic express server and api rules
+- req.body : POST request have body element to pass it on
+- req.params : dynamic routes on url
+- req.query :search results based on query condition
