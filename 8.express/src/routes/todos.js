@@ -22,12 +22,14 @@ router.get("/api/todo/:id", async (req, res) => {
 
 //query - get query of userId and completed state and search them from db and return results
 router.get("/api/todo", async (req, res) => {
-  const { userId } = req.query;
+  const { userId, completed } = req.query;
   const url = `https://jsonplaceholder.typicode.com/todos`;
   const response = await axios.get(url);
   const data = response.data;
   if (!data) return res.status(404).send("not found");
-  const sorted = data.filter((el) => el.userId == userId);
+  const sorted = data.filter(
+    (el) => el.userId == userId && String(el.completed) == completed
+  );
   res.json({ data: sorted });
 });
 
