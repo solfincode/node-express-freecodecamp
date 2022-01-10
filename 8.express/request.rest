@@ -1,7 +1,7 @@
-GET http://localhost:8000/api/todos
+GET http://localhost:8000/api/todos?user=david
 
 ### get one todo
-GET http://localhost:8000/api/todo/6
+GET http://localhost:8000/api/todo/6?user=david
 
 ### query in url
-GET http://localhost:8000/api/todo?userId=3&completed=false&search=aliquid
+GET http://localhost:8000/api/todo?userId=3&completed=false&search=aliquid&user=david

@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const axios = require("axios");
+//middleware
 const logger = require("../utils/logger");
+const auth = require("../utils/auth");
 
 //axios get all todos from json placeholder api into express server api
-router.get("/api/todos", logger, async (req, res) => {
+router.get("/api/todos", auth, logger, async (req, res) => {
   const url = "https://jsonplaceholder.typicode.com/todos";
   const response = await axios.get(url);
   const data = response.data;
@@ -12,7 +14,7 @@ router.get("/api/todos", logger, async (req, res) => {
 });
 
 //get one todo
-router.get("/api/todo/:id", logger, async (req, res) => {
+router.get("/api/todo/:id",auth, logger, async (req, res) => {
   const { id } = req.params;
   const url = `https://jsonplaceholder.typicode.com/todos/${id}`;
   const response = await axios.get(url);
@@ -22,7 +24,7 @@ router.get("/api/todo/:id", logger, async (req, res) => {
 });
 
 //query - get query of userId and completed state and search them from db and return results
-router.get("/api/todo", logger, async (req, res) => {
+router.get("/api/todo",auth, logger, async (req, res) => {
   const { userId, completed, search } = req.query;
   const url = `https://jsonplaceholder.typicode.com/todos`;
   const response = await axios.get(url);
