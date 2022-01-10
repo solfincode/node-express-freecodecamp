@@ -1,0 +1,7 @@
+GET http://localhost:8000/api/todos
+
+### get one todo
+GET http://localhost:8000/api/todo/6
+
+### query in url
+GET http://localhost:8000/api/todo?userId=3
